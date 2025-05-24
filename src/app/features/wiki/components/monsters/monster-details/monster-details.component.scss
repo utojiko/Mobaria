@@ -1,0 +1,232 @@
+.monster-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.monster-header {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  
+  .monster-image {
+    flex: 0 0 400px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--color-gold);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  .monster-info {
+    flex: 1;
+    
+    h1 {
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .monster-family {
+      color: var(--color-light-gold);
+      font-size: 1.1rem;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .monster-level {
+      display: inline-block;
+      background-color: rgba(212, 175, 55, 0.1);
+      color: var(--color-gold);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: 4px;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .monster-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: var(--spacing-md);
+    }
+  }
+}
+
+.location-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  
+  .location-tag {
+    background-color: var(--color-slate);
+    color: #fff;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+}
+
+.monster-content {
+  > div {
+    background-color: var(--color-slate);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  
+  .stat-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    text-align: center;
+    
+    .stat-icon {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-sm);
+      display: block;
+    }
+    
+    .stat-value {
+      font-size: 2rem;
+      color: var(--color-gold);
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .stat-label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.combat-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+  
+  ul {
+    list-style: none;
+    
+    li {
+      margin-bottom: var(--spacing-sm);
+      padding-left: var(--spacing-md);
+      position: relative;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+    }
+  }
+  
+  .strengths li:before {
+    background-color: var(--color-green);
+  }
+  
+  .weaknesses li:before {
+    background-color: var(--color-ruby);
+  }
+}
+
+.attacks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.attack-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  
+  h3 {
+    color: var(--color-light-gold);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .attack-description {
+    margin-bottom: var(--spacing-md);
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .attack-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    
+    .attack-stat {
+      text-align: center;
+      
+      .label {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--color-light-gold);
+        margin-bottom: var(--spacing-xs);
+      }
+      
+      .value {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+.drops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.drop-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  
+  h3 {
+    color: var(--color-light-gold);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+  }
+  
+  .drop-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    
+    .label {
+      display: block;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .value {
+      font-size: 1.1rem;
+      color: var(--color-gold);
+    }
+  }
+}

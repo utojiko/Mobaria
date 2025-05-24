@@ -1,0 +1,200 @@
+.wiki-home {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wiki-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .wiki-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.wiki-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-card {
+  background-color: var(--color-slate);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--section-color);
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    
+    .section-icon {
+      transform: scale(1.1);
+    }
+  }
+  
+  .section-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.3s ease;
+  }
+  
+  h2 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--section-color);
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+  }
+}
+
+.wiki-recent {
+  background-color: var(--color-slate);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  
+  h2 {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+}
+
+.recent-articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.article-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+  
+  .article-title {
+    color: #fff;
+  }
+  
+  .article-category {
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    border-radius: 10px;
+  }
+}
+
+.wiki-search-box {
+  background-color: var(--color-slate);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  
+  h2 {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .search-container {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    
+    input {
+      flex: 1;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: 4px 0 0 4px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background-color: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      font-family: var(--font-body);
+      
+      &:focus {
+        outline: none;
+        border-color: var(--color-gold);
+      }
+    }
+    
+    button {
+      padding: var(--spacing-sm) var(--spacing-md);
+      background-color: var(--color-gold);
+      color: var(--color-dark);
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-family: var(--font-ui);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      
+      &:hover {
+        background-color: var(--color-light-gold);
+      }
+    }
+  }
+}
+
+.wiki-admin {
+  background-color: var(--color-slate);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gold);
+  }
+  
+  p {
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 768px) {
+  .wiki-header {
+    h1 {
+      font-size: 2.2rem;
+    }
+  }
+}

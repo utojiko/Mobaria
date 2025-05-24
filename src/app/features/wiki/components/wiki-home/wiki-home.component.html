@@ -1,0 +1,62 @@
+<div class="wiki-home">
+  <div class="wiki-header">
+    <h1>Bienvenue sur Mobaria !</h1>
+    <p class="wiki-description">
+      Voici le wiki du serveur, il vous accompagnera tout au long de votre aventure !
+    </p>
+  </div>
+
+  
+  <div class="wiki-recent">
+    <h2>Qu'est-ce qu'il y a sur le serveur ?</h2>
+    <div>
+      <p>
+        Mobaria est un serveur Minecraft MMO RPG unique, offrant une expérience immersive avec <strong>des classes, des quêtes épiques et des donjons à explorer</strong>.
+      </p>
+      <p>
+        Un <strong>texture pack</strong> inclu dans le serveur vous plongera dans l'univers de Mobaria, avec <strong>des monstres, des armes et des armures personnalisés</strong>.
+        Découvrez un monde riche en aventures, où chaque choix compte et où vous pouvez forger votre propre héritage.
+      </p>
+      <p>
+        Le serveur en version 1.20.4 et + est disponible à l'adresse <a href="minecraft://?addExternalServer=Mobaria|play.mobaria.com" target="_blank">play.mobaria.com</a>.
+      </p>
+      <p>
+        Pour commencer, explorez les différentes sections du wiki pour en apprendre davantage sur les classes, les mécaniques de jeu, les monstres et bien plus encore.
+      </p>
+    </div>
+  </div>
+  
+  <div class="wiki-sections">
+    <div class="section-card" *ngFor="let section of wikiSections" [routerLink]="section.route" [style.--section-color]="section.color">
+      <div class="section-icon">{{ section.icon }}</div>
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.description }}</p>
+    </div>
+  </div>
+  
+  <div class="wiki-recent">
+    <h2>Articles récents</h2>
+    <div class="recent-articles">
+      <a class="article-link" routerLink="/wiki/world/quests">
+        <span class="article-title">Guide des quêtes pour débutants</span>
+        <span class="article-category">Monde</span>
+      </a>
+      <a class="article-link" routerLink="/wiki/classes/warrior">
+        <span class="article-title">Maîtriser la classe Guerrier</span>
+        <span class="article-category">Classes</span>
+      </a>
+      <a class="article-link" routerLink="/wiki/mechanics/dungeons">
+        <span class="article-title">Stratégies pour le Donjon des Abysses</span>
+        <span class="article-category">Mécaniques</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="wiki-search-box">
+    <h2>Rechercher dans le wiki</h2>
+    <div class="search-container">
+      <input type="text" placeholder="Que recherchez-vous ?" />
+      <button>Rechercher</button>
+    </div>
+  </div>
+</div>

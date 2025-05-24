@@ -1,0 +1,26 @@
+<header class="site-header" [class.scrolled]="isScrolled">
+  <div class="container header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <h1>MOBARIA</h1>
+        <span class="slogan">Choisis ton destin. Forge ton héritage.</span>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <div class="burger" [class.active]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    
+    <nav class="main-nav" [class.open]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
+        <li><a routerLink="/wiki" routerLinkActive="active">Wiki</a></li>
+        <li><a routerLink="/store" routerLinkActive="active">Boutique</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

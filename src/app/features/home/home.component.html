@@ -1,0 +1,181 @@
+<div class="home-page">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section" [class.visible]="sections[0].visible">
+        <div class="hero-content">
+            <h1>MOBARIA</h1>
+            <p class="slogan">Choisis ton destin. Forge ton héritage.</p>
+            <p class="description">Un serveur Minecraft MMO RPG unique avec des classes, des quêtes épiques et des
+                donjons à
+                explorer</p>
+            <div class="cta-buttons">
+                <a href="minecraft://?addExternalServer=Mobaria|play.mobaria.com" class="cta-button primary">Rejoindre
+                    le
+                    serveur</a>
+                <a routerLink="/wiki" class="cta-button secondary">Découvrir le wiki</a>
+            </div>
+        </div>
+        <div class="scroll-prompt">
+            <span>Découvre l'aventure</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section" [class.visible]="sections[1].visible">
+        <div class="container">
+            <h2 class="section-title">Une expérience RPG complète</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: var(--color-ruby)">
+                        <span>⚔️</span>
+                    </div>
+                    <h3>Combat Dynamique</h3>
+                    <p>Affronte de puissants ennemis avec des attaques et compétences uniques à ta classe</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: var(--color-blue)">
+                        <span>📜</span>
+                    </div>
+                    <h3>Quêtes Épiques</h3>
+                    <p>Explore l'histoire immersive à travers des quêtes aux choix multiples et conséquences</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: var(--color-green)">
+                        <span>👑</span>
+                    </div>
+                    <h3>Donjons & Raids</h3>
+                    <p>Forme des groupes pour affronter des défis stratégiques et obtenir des récompenses rares</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background-color: var(--color-gold)">
+                        <span>💎</span>
+                    </div>
+                    <h3>Équipement Unique</h3>
+                    <p>Collecte des panoplies d'équipement spéciales offrant des bonus puissants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Section -->
+    <section id="world" class="world-section parallax" [class.visible]="sections[2].visible">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="world-content">
+                <h2 class="section-title">Découvre un monde vaste et mystérieux</h2>
+                <p class="section-description">
+                    Explore différentes zones, chacune avec ses propres biomes, ennemis et secrets à découvrir.
+                    Des forêts enchantées aux cavernes de lave, chaque région offre de nouveaux défis.
+                </p>
+                <a routerLink="/wiki/world" class="cta-button secondary">Explorer le monde</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Serveur info Section -->
+    <section id="serveur_info" class="features-section players-count" [class.visible]="sections[3].visible">
+        <div class="container">
+            <div class="stat-box">
+                <div class="stat">
+                    <div class="stat-number">1500+</div>
+                    <div class="stat-label">Joueurs actifs</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">{{gameClasses.length}}</div>
+                    <div class="stat-label">Classes uniques</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Quêtes</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">Donjons</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="features-section" [class.visible]="sections[4].visible">
+        <div class="container">
+            <h2 class="section-title">Choisis ta classe</h2>
+            <div class="classes-grid">
+                @for (gameClass of gameClasses; track gameClass.id) {
+                <div class="feature-card" [routerLink]="['/wiki/classes']" [queryParams]="{id: gameClass.id}"
+                    style="cursor: pointer;">
+                    <div class="feature-icon" [style.background-color]="gameClass.color">
+                        <mat-icon>{{ gameClass.icon }}</mat-icon>
+                    </div>
+                    <h3>{{ gameClass.name }}</h3>
+                    <p>{{ gameClass.description }}</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section id="classes" class="classes-section" [class.visible]="sections[3].visible">
+    <div class="container">
+      <h2 class="section-title">Choisis ta classe</h2>
+      <div class="classes-carousel">
+        <div class="class-card" style="--class-color: var(--color-ruby)">
+          <h3>Guerrier</h3>
+          <div class="class-image">
+            <img src="https://images.pexels.com/photos/7521222/pexels-photo-7521222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Guerrier">
+          </div>
+          <p>Maître du combat rapproché avec une force brute et une résistance inégalée</p>
+          <a routerLink="/wiki/classes/guerrier" class="class-link">Voir détails</a>
+        </div>
+        <div class="class-card" style="--class-color: var(--color-blue)">
+          <h3>Mage</h3>
+          <div class="class-image">
+            <img src="https://images.pexels.com/photos/8412245/pexels-photo-8412245.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mage">
+          </div>
+          <p>Contrôle les éléments et lance des sorts dévastateurs à distance</p>
+          <a routerLink="/wiki/classes/mage" class="class-link">Voir détails</a>
+        </div>
+        <div class="class-card" style="--class-color: var(--color-green)">
+          <h3>Archer</h3>
+          <div class="class-image">
+            <img src="https://images.pexels.com/photos/8081698/pexels-photo-8081698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Archer">
+          </div>
+          <p>Expert en combat à distance avec précision et mobilité exceptionnelles</p>
+          <a routerLink="/wiki/classes/archer" class="class-link">Voir détails</a>
+        </div>
+      </div>
+      <div class="classes-more">
+        <a routerLink="/wiki/classes" class="cta-button">Découvre toutes les classes</a>
+      </div>
+    </div>
+  </section> -->
+
+    <!-- Join Section -->
+    <section id="join" class="join-section" [class.visible]="sections[5].visible">
+        <div class="container">
+            <div class="join-card">
+                <h2>Prêt à commencer l'aventure ?</h2>
+                <p>Rejoins des milliers de joueurs dans le monde de Mobaria dès maintenant !</p>
+                <div class="server-info">
+                    <div class="info-item">
+                        <span class="label">Adresse du serveur:</span>
+                        <span class="value">play.mobaria.com</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Version Minecraft:</span>
+                        <span class="value">1.19.2+</span>
+                    </div>
+                </div>
+                <a href="minecraft://?addExternalServer=Mobaria|play.mobaria.com" class="cta-button primary">Rejoindre
+                    maintenant</a>
+                <div class="join-links">
+                    <a href="#" target="_blank" class="join-link">Rejoindre Discord</a>
+                    <a routerLink="/wiki" class="join-link">Consulter le Wiki</a>
+                    <a routerLink="/store" class="join-link">Visiter la Boutique</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

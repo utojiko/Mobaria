@@ -1,0 +1,59 @@
+<div class="zone-detail" *ngIf="zone">
+  <div class="zone-header">
+    <div class="zone-image">
+      <img [src]="zone.imageUrl" [alt]="zone.name">
+    </div>
+    <div class="zone-info">
+      <h1>{{ zone.name }}</h1>
+      <p class="zone-biome">{{ zone.biome }}</p>
+      <p class="zone-level">Niveau {{ zone.level.min }} - {{ zone.level.max }}</p>
+      <p class="zone-description">{{ zone.description }}</p>
+    </div>
+  </div>
+
+  <div class="zone-content">
+    <div class="monsters-section" *ngIf="zone.monsters.length">
+      <h2>Monstres</h2>
+      <div class="monsters-grid">
+        <a class="monster-card" *ngFor="let monsterId of zone.monsters" [routerLink]="['/wiki/world/monsters', monsterId]">
+          <!-- Monster card content will be populated with actual monster data -->
+          <div class="monster-image">
+            <img src="placeholder.jpg" alt="Monster">
+          </div>
+          <div class="monster-name">Nom du monstre</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="dungeon-section" *ngIf="zone.dungeon">
+      <h2>Donjon</h2>
+      <div class="dungeon-card">
+        <h3>{{ zone.dungeon.name }}</h3>
+        <p>Niveau minimum: {{ zone.dungeon.minLevel }}</p>
+        <a [routerLink]="['/wiki/world/monsters', zone.dungeon.bossId]" class="boss-link">
+          Voir le boss
+        </a>
+      </div>
+    </div>
+
+    <div class="items-section" *ngIf="zone.items.length">
+      <h2>Objets de la zone</h2>
+      <div class="items-grid">
+        <div class="item-card" *ngFor="let item of zone.items">
+          <div class="item-rarity" [class]="item.rarity">{{ item.rarity }}</div>
+          <h3>{{ item.name }}</h3>
+          <p class="item-type">{{ item.type }}</p>
+          <p class="set-name" *ngIf="item.setName">Set: {{ item.setName }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="set-bonus-section" *ngIf="zone.setBonus">
+      <h2>Bonus de Set - {{ zone.setBonus.setName }}</h2>
+      <p class="set-pieces">{{ zone.setBonus.pieces }} pièces requises</p>
+      <ul class="set-effects">
+        <li *ngFor="let effect of zone.setBonus.effects">{{ effect }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

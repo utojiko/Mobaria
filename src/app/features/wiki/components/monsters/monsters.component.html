@@ -1,0 +1,49 @@
+<div class="monsters-container">
+    <h1>Monstres de Mobaria</h1>
+    <p class="monsters-description">
+        Découvre les créatures qui peuplent notre monde, leurs caractéristiques et les trésors qu'elles peuvent laisser
+        tomber.
+    </p>
+
+    <div class="monster-filters">
+        <div class="search-box">
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher un monstre..."
+                (input)="filterMonsters()">
+        </div>
+        <div class="filter-buttons">
+            <button *ngFor="let family of monsterFamilies" [class.active]="selectedFamily === family"
+                (click)="filterByFamily(family)">
+                {{ family }}
+            </button>
+        </div>
+    </div>
+
+    <div class="monsters-grid">
+        <div class="monster-card" *ngFor="let monster of filteredMonsters"
+            [routerLink]="['/wiki/world/monsters', monster.id]">
+            <div class="monster-image">
+                <img [src]="monster.imageUrl" [alt]="monster.name">
+                <div class="monster-level">Niveau {{ monster.level }}</div>
+            </div>
+            <div class="monster-content">
+                <h2>{{ monster.name }}</h2>
+                <p class="monster-family">{{ monster.family }}</p>
+                <p class="monster-description">{{ monster.description }}</p>
+                <div class="monster-stats">
+                    <div class="stat">
+                        <span class="label">PV</span>
+                        <span class="value">{{ monster.health }}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">ATT</span>
+                        <span class="value">{{ monster.attack }}</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">DEF</span>
+                        <span class="value">{{ monster.defense }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="store-container">
+  <div class="store-header">
+    <h1>Boutique Mobaria</h1>
+    <p class="store-description">
+      Soutiens le serveur et améliore ton expérience de jeu avec nos offres exclusives.
+      Toutes les transactions sont sécurisées et les achats sont livrés instantanément.
+    </p>
+  </div>
+  
+  <div class="store-categories">
+    <button 
+      class="category-button" 
+      [class.active]="activeCategory === 'keys'"
+      (click)="setCategory('keys')"
+    >
+      Clés de Coffre
+    </button>
+    <button 
+      class="category-button" 
+      [class.active]="activeCategory === 'ranks'"
+      (click)="setCategory('ranks')"
+    >
+      Grades
+    </button>
+    <button 
+      class="category-button" 
+      [class.active]="activeCategory === 'cosmetics'"
+      (click)="setCategory('cosmetics')"
+    >
+      Cosmétiques
+    </button>
+  </div>
+  
+  <div class="store-items">
+    <div class="item-card" *ngFor="let item of filteredItems">
+      <div class="item-image">
+        <img [src]="item.image" [alt]="item.name">
+      </div>
+      <div class="item-content">
+        <h3 class="item-name">{{ item.name }}</h3>
+        <p class="item-description">{{ item.description }}</p>
+        <div class="item-price">{{ item.price | currency:'EUR' }}</div>
+        <button class="buy-button">Acheter</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="store-info">
+    <div class="info-card">
+      <h2>Comment ça marche ?</h2>
+      <ol>
+        <li>Choisis ton article dans la boutique</li>
+        <li>Procède au paiement sécurisé</li>
+        <li>Reçois instantanément ton achat en jeu</li>
+        <li>Profite de tes avantages !</li>
+      </ol>
+    </div>
+    
+    <div class="info-card">
+      <h2>Besoin d'aide ?</h2>
+      <p>
+        Si tu as des questions ou des problèmes avec tes achats, n'hésite pas à contacter notre équipe de support.
+      </p>
+      <a href="#" class="support-link">Contacter le support</a>
+    </div>
+  </div>
+</div>

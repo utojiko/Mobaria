@@ -1,0 +1,15 @@
+<div class="world-container">
+  <h1>Le Monde de Mobaria</h1>
+  <p class="world-description">
+    Explore un vaste monde rempli de mystères, de dangers et de trésors. 
+    Chaque région recèle ses propres secrets et défis à relever.
+  </p>
+
+  <div class="sections-grid">
+    <div class="section-card" *ngFor="let section of sections" [routerLink]="section.route">
+      <div class="section-icon">{{ section.icon }}</div>
+      <h2>{{ section.title }}</h2>
+      <p>{{ section.description }}</p>
+    </div>
+  </div>
+</div>

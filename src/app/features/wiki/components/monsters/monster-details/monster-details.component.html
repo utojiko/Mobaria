@@ -1,0 +1,100 @@
+<div class="monster-detail" *ngIf="monster">
+    <div class="monster-header">
+        <div class="monster-image">
+            <img [src]="monster.imageUrl" [alt]="monster.name">
+        </div>
+        <div class="monster-info">
+            <h1>{{ monster.name }}</h1>
+            <p class="monster-family">{{ monster.family }}</p>
+            <p class="monster-level">Niveau {{ monster.level }}</p>
+            <p class="monster-description">{{ monster.description }}</p>
+            <div class="monster-locations">
+                <h3>Zones</h3>
+                <div class="location-tags">
+                    <span class="location-tag" *ngFor="let location of monster.location">{{ location }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="monster-content">
+        <div class="stats-section">
+            <h2>Statistiques</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-icon">❤️</span>
+                    <span class="stat-value">{{ monster.health }}</span>
+                    <span class="stat-label">Points de vie</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">⚔️</span>
+                    <span class="stat-value">{{ monster.attack }}</span>
+                    <span class="stat-label">Attaque</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🛡️</span>
+                    <span class="stat-value">{{ monster.defense }}</span>
+                    <span class="stat-label">Défense</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="combat-section">
+            <div class="strengths">
+                <h2>Forces</h2>
+                <ul>
+                    <li *ngFor="let strength of monster.strengths">{{ strength }}</li>
+                </ul>
+            </div>
+            <div class="weaknesses">
+                <h2>Faiblesses</h2>
+                <ul>
+                    <li *ngFor="let weakness of monster.weaknesses">{{ weakness }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="attacks-section">
+            <h2>Attaques</h2>
+            <div class="attacks-grid">
+                <div class="attack-card" *ngFor="let attack of monster.attacks">
+                    <h3>{{ attack.name }}</h3>
+                    <p class="attack-description">{{ attack.description }}</p>
+                    <div class="attack-stats">
+                        <div class="attack-stat">
+                            <span class="label">Dégâts</span>
+                            <span class="value">{{ attack.damage }}</span>
+                        </div>
+                        <div class="attack-stat">
+                            <span class="label">Type</span>
+                            <span class="value">{{ attack.type }}</span>
+                        </div>
+                        <div class="attack-stat">
+                            <span class="label">Recharge</span>
+                            <span class="value">{{ attack.cooldown }}s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="drops-section">
+            <h2>Butin</h2>
+            <div class="drops-grid">
+                <div class="drop-card" *ngFor="let drop of monster.drops">
+                    <h3>{{ drop.itemName }}</h3>
+                    <div class="drop-info">
+                        <div class="drop-rate">
+                            <span class="label">Taux</span>
+                            <span class="value">{{ drop.dropRate }}%</span>
+                        </div>
+                        <div class="drop-quantity">
+                            <span class="label">Quantité</span>
+                            <span class="value">{{ drop.minQuantity }}-{{ drop.maxQuantity }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

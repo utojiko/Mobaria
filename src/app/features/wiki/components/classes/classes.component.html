@@ -1,0 +1,122 @@
+<div class="classes-container">
+  <div class="container">
+
+    <div class="classes-header">
+      <h1>Classes de Mobaria</h1>
+      <p class="classes-intro">
+        Découvrez les six classes jouables de Mobaria, chacune avec ses compétences uniques,
+        ses forces et ses faiblesses. Choisissez celle qui correspond le mieux à votre style de jeu.
+      </p>
+    </div>
+
+    @if (loading) {
+      <div class="loading-container">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Chargement des classes...</p>
+      </div>
+    } @else if (error) {
+      <div class="error-container">
+        <p>{{ error }}</p>
+        <button (click)="refreshClasses()">Réessayer</button>
+      </div>
+    } @else if (classes.length === 0) {
+      <div class="error-container">
+        <p>Aucune classe disponible. Le fichier de données est peut-être vide.</p>
+        <button (click)="refreshClasses()">Réessayer</button>
+      </div>
+    } @else {
+      <div class="classes-selection">
+        <div class="class-icons">
+          @for (gameClass of classes; track gameClass.id) {
+            <div class="class-icon-wrapper" 
+                 [ngClass]="{'active': selectedClass === gameClass.id}"
+                 (click)="selectClass(gameClass.id)" 
+                 [style.border-color]="gameClass.color">
+              <div class="class-icon" [style.background-color]="gameClass.color">
+                <mat-icon>{{gameClass.icon}}</mat-icon>
+              </div>
+              <span class="class-name">{{gameClass.name}}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      @if (selectedClass) {
+        <div class="class-details">
+          <div class="class-header" [style.border-color]="getSelectedClass()?.color">
+            <h2>{{getSelectedClass()?.name}}</h2>
+            <p>{{getSelectedClass()?.description}}</p>
+          </div>
+
+          <div class="class-stats">
+            <h3>Statistiques</h3>
+            <div class="stats-grid">
+              <div class="stat-bar">
+                <span class="stat-label">Dégâts</span>
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill"
+                    [style.width.%]="getSelectedClass()?.stats?.damage !== undefined ? getSelectedClass()!.stats.damage * 10 : 0"
+                    [style.background-color]="getSelectedClass()?.color || ''"></div>
+                </div>
+                <span class="stat-value">{{getSelectedClass()?.stats?.damage}}/10</span>
+              </div>
+              <div class="stat-bar">
+                <span class="stat-label">Défense</span>
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill"
+                    [style.width.%]="getSelectedClass()?.stats?.defense !== undefined ? getSelectedClass()!.stats.defense * 10 : 0"
+                    [style.background-color]="getSelectedClass()?.color || ''"></div>
+                </div>
+                <span class="stat-value">{{getSelectedClass()?.stats?.defense}}/10</span>
+              </div>
+              <div class="stat-bar">
+                <span class="stat-label">Mobilité</span>
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill"
+                    [style.width.%]="getSelectedClass()?.stats?.mobility !== undefined ? getSelectedClass()!.stats.mobility * 10 : 0"
+                    [style.background-color]="getSelectedClass()?.color || ''"></div>
+                </div>
+                <span class="stat-value">{{getSelectedClass()?.stats?.mobility}}/10</span>
+              </div>
+              <div class="stat-bar">
+                <span class="stat-label">Utilité</span>
+                <div class="stat-bar-bg">
+                  <div class="stat-bar-fill"
+                    [style.width.%]="getSelectedClass()?.stats?.utility !== undefined ? getSelectedClass()!.stats.utility * 10 : 0"
+                    [style.background-color]="getSelectedClass()?.color || ''"></div>
+                </div>
+                <span class="stat-value">{{getSelectedClass()?.stats?.utility}}/10</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="class-abilities">
+            <h3>Compétences principales</h3>
+            <div class="abilities-list">
+              @for (ability of getSelectedClass()?.abilities; track ability.name) {
+                <div class="ability-card" [style.border-color]="getSelectedClass()?.color">
+                  <div class="ability-content">
+                    <h4>{{ability.name}}</h4>
+                    <p>{{ability.description}}</p>
+                  </div>
+                  <div class="ability-cooldown">
+                    <span>Temps de recharge:</span> {{ability.cooldown}}
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <div class="class-playstyle">
+            <h3>Style de jeu</h3>
+            <p>{{getSelectedClass()?.playstyle}}</p>
+          </div>
+        </div>
+      } @else {
+        <div class="class-selection-prompt">
+          <p>Sélectionnez une classe ci-dessus pour afficher ses détails.</p>
+        </div>
+      }
+    }
+  </div>
+</div>

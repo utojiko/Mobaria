@@ -1,0 +1,13 @@
+<div class="wiki-container">
+  <button class="sidebar-toggle" (click)="toggleSidebar()">
+    <span class="toggle-icon" [class.open]="isSidebarOpen"></span>
+  </button>
+  
+  <div class="wiki-sidebar" [class.open]="isSidebarOpen">
+    <app-wiki-sidebar></app-wiki-sidebar>
+  </div>
+  
+  <div class="wiki-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
