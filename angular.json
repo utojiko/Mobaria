@@ -7,6 +7,10 @@
   "projects": {
     "demo": {
       "architect": {
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
+        },
         "build": {
           "builder": "@angular/build:application",
           "configurations": {
@@ -26,13 +30,19 @@
             }
           },
           "options": {
-            "assets": ["src/assets"],
+            "assets": [
+              "src/assets"
+            ],
             "index": "src/index.html",
             "browser": "src/main.ts",
             "outputPath": "dist/demo",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "scripts": [],
-            "styles": ["src/global_styles.css"],
+            "styles": [
+              "src/global_styles.css"
+            ],
             "tsConfig": "tsconfig.app.json"
           }
         },
