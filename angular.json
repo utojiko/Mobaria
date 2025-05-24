@@ -5,7 +5,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "demo": {
+    "mobaria": {
       "architect": {
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
