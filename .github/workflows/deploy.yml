@@ -1,37 +1,32 @@
-name: GitHub Pages
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
     branches:
-      - main
-      - master
+      - main  # déclenche sur chaque push sur main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions: 
-      contents: write
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # adapte si tu veux une version spécifique
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build Github Pages Angular Site
-      run: npm run build -- --base-href https://${{github.actor}}.github.io/${{github.event.repository.name}}/
+      - name: Build Angular app
+        run: npm run build -- --base-href=/Mobaria/
+        # ou directement : ng build --configuration production --base-href=/Mobaria/
 
-    - name: Deploy
-      if: success()
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: dist/${{github.event.repository.name}}
-        enable_jekyll: true
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # branche cible pour GitHub Pages
+          folder: dist/  # dossier généré par ng build
