@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Loup Sauvage",
+    "zoneId": 2,
+    "description": "Un prédateur rapide et agile qui chasse en meute.",
+    "strength": 3,
+    "weakness": "Feu"
+  },
+  {
+    "id": 2,
+    "name": "Zombie Paysan",
+    "zoneId": 1,
+    "description": "Un ancien fermier revenu à la vie.",
+    "strength": 2,
+    "weakness": "Lumière"
+  },
+  {
+    "id": 3,
+    "name": "Crabe Géant",
+    "zoneId": 3,
+    "description": "Un crustacé massif qui défend son territoire.",
+    "strength": 4,
+    "weakness": "Électricité"
+  },
+  {
+    "id": 1001,
+    "name": "Premier boss",
+    "zoneId": 3,
+    "description": "Un crustacé massif qui défend son territoire.",
+    "strength": 4,
+    "weakness": "Électricité"
+  },
+  {
+    "id": 1002,
+    "name": "Deuxième boss",
+    "description": "Un crustacé massif qui défend son territoire.",
+    "strength": 8,
+    "weakness": "Eau"
+  },
+  {
+    "id": 1003,
+    "name": "Troisième boss",
+    "description": "Un crustacé massif qui défend son territoire.",
+    "strength": 12,
+    "weakness": "Feu"
+  }
+]

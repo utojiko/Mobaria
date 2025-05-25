@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Donjon des Paysans",
+    "description": "Un donjon simple pour les aventuriers débutants.",
+    "recommendedLevel": 5,
+    "boss": 1001,
+    "mobs": [1, 2, 3],
+    "requiredLevel": 5,
+    "imageUrl": "assets/images/dungeon1.png"
+  },
+  {
+    "id": 2,
+    "name": "Forêt Sombre",
+    "description": "Un labyrinthe dense rempli de créatures mystérieuses.",
+    "boss": 1002,
+    "mobs": [1, 2, 3],
+    "requiredLevel": 15,
+    "imageUrl": "assets/images/dungeon1.png"
+  },
+  {
+    "id": 3,
+    "name": "Caverne des Marées",
+    "description": "Un réseau de grottes inondées abritant des trésors cachés.",
+    "boss": 1003,
+    "mobs": [1, 2, 3],
+    "requiredLevel": 25,
+    "imageUrl": "assets/images/dungeon1.png"
+  }
+]
