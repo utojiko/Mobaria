@@ -35,7 +35,7 @@
             ],
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "outputPath": "dist/mobaria",
+            "outputPath": "dist",
             "polyfills": [
               "zone.js"
             ],
