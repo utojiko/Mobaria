@@ -29,4 +29,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # branche cible pour GitHub Pages
-          folder: dist/  # dossier généré par ng build
+          folder: dist/mobaria/browser  # dossier généré par ng build
