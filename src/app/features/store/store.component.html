@@ -6,31 +6,24 @@
       Toutes les transactions sont sécurisées et les achats sont livrés instantanément.
     </p>
   </div>
-  
+
   <div class="store-categories">
-    <button 
-      class="category-button" 
-      [class.active]="activeCategory === 'keys'"
-      (click)="setCategory('keys')"
-    >
+    <button class="category-button" [class.active]="activeCategory === 'keys'" (click)="setCategory('keys')">
       Clés de Coffre
     </button>
-    <button 
-      class="category-button" 
-      [class.active]="activeCategory === 'ranks'"
-      (click)="setCategory('ranks')"
-    >
+    <button class="category-button" [class.active]="activeCategory === 'ranks'" (click)="setCategory('ranks')">
       Grades
     </button>
-    <button 
-      class="category-button" 
-      [class.active]="activeCategory === 'cosmetics'"
-      (click)="setCategory('cosmetics')"
-    >
+    <button class="category-button" [class.active]="activeCategory === 'cosmetics'" (click)="setCategory('cosmetics')">
       Cosmétiques
     </button>
+    <button class="category-button" [class.active]="activeCategory === 'pannier'" (click)="setCategory('pannier')">
+      <mat-icon>shopping_cart</mat-icon>
+      Pannier
+      <span *ngIf="totalCartItems > 0" class="cart-count">{{ totalCartItems }}</span>
+    </button>
   </div>
-  
+
   <div class="store-items">
     <div class="item-card" *ngFor="let item of filteredItems">
       <div class="item-image">
@@ -39,12 +32,84 @@
       <div class="item-content">
         <h3 class="item-name">{{ item.name }}</h3>
         <p class="item-description">{{ item.description }}</p>
-        <div class="item-price">{{ item.price | currency:'EUR' }}</div>
-        <button class="buy-button">Acheter</button>
+        <div class="item-details">
+          <div *ngIf="getItemQuantity(item.id) > 0" class="item-quantity">
+            <span>Dans le panier : {{ getItemQuantity(item.id) }}</span>
+          </div>
+          <div class="item-price">{{ item.price | currency:'EUR' }}</div>
+        </div>
+        <button class="buy-button" (click)="addToCart(item.id)">Acheter</button>
       </div>
     </div>
   </div>
-  
+
+  @if (activeCategory === 'pannier') {
+  <header class="cart-header">
+    <h1>Shopping Cart</h1>
+    <p *ngIf="cartItems.length === 0">Your cart is empty</p>
+  </header>
+
+  <div class="cart-content" *ngIf="cartItems.length > 0">
+    <div class="cart-items">
+      <div class="cart-table">
+        <div class="cart-row" *ngFor="let cartItem of cartItems">
+          <div class="cart-cell">
+            <img [src]="cartItem.item.image" [alt]="cartItem.item.name" class="cart-item-image">
+          </div>
+          <div class="cart-cell cart-cell-title">{{ cartItem.item.name }}</div>
+          <div class="cart-cell">{{ cartItem.item.description }}</div>
+          <div class="cart-cell">
+            <button (click)="updateQuantity(cartItem.item.id, cartItem.quantity - 1)" class="quantity-btn">
+              <i class="fas fa-minus"></i>
+            </button>
+            <span>{{ cartItem.quantity }}</span>
+            <button (click)="updateQuantity(cartItem.item.id, cartItem.quantity + 1)" class="quantity-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="cart-cell">
+            <span *ngIf="cartItem.item.discount" class="original-price">
+              ${{ (cartItem.item.price * cartItem.quantity).toFixed(2) }}
+            </span>
+            <span class="current-price">
+              ${{ (getDiscountedPrice(cartItem.item) * cartItem.quantity).toFixed(2) }}
+            </span>
+          </div>
+          <div class="cart-cell">
+            <button (click)="removeFromCart(cartItem.item.id)" class="remove-btn">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>${{getTotalPrice().toFixed(2)}}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax</span>
+        <span>$0.00</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span>${{getTotalPrice().toFixed(2)}}</span>
+      </div>
+      <button routerLink="/shop/checkout" class="btn btn-accent checkout-btn">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <div class="empty-cart" *ngIf="cartItems.length === 0">
+    <i class="fas fa-shopping-cart"></i>
+    <p>Your cart is empty</p>
+  </div>
+  }
+
   <div class="store-info">
     <div class="info-card">
       <h2>Comment ça marche ?</h2>
@@ -55,7 +120,7 @@
         <li>Profite de tes avantages !</li>
       </ol>
     </div>
-    
+
     <div class="info-card">
       <h2>Besoin d'aide ?</h2>
       <p>

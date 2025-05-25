@@ -39,6 +39,8 @@
   --color-light-slate: #424549;
   --color-light-blue: #6B9BE4;
   --color-light-green: #8ABF95;
+
+  --color-delete: #C70000;
   
   /* Font families */
   --font-heading: 'Cinzel', serif;

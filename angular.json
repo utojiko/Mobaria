@@ -21,6 +21,7 @@
               "sourceMap": true
             },
             "production": {
+              "outputPath": "dist/",
               "aot": true,
               "extractLicenses": true,
               "namedChunks": false,

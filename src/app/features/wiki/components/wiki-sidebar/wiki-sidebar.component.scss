@@ -39,12 +39,6 @@
   }
 }
 
-.wiki-nav {
-  flex: 1;
-  overflow-y: auto;
-  padding: var(--spacing-sm) 0;
-}
-
 .nav-item {
   display: flex;
   align-items: center;
@@ -83,8 +77,8 @@
 }
 
 .home-link {
-  margin-bottom: var(--spacing-md);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  padding-bottom: var(--spacing-md);
+  padding-top: var(--spacing-md);
 }
 
 .nav-icon {
@@ -108,7 +102,7 @@
   display: flex;
   align-items: center;
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-section {

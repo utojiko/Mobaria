@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
   },
   {
     path: 'store',
-    loadComponent: () => import('./features/store/store.component').then(m => m.StoreComponent)
+    loadChildren: () => import('./routes/store.routes').then(m => m.STORE_ROUTES)
   },
   {
     path: '**',
