@@ -101,4 +101,15 @@
       }
     }
   }
+
+  .required-level {
+    display: inline-block;
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--color-gold);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
 }

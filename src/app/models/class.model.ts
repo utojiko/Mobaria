@@ -20,7 +20,7 @@ export interface GameClass {
 }
 
 export interface ClassAttack {
-  id: string;
+  id: number;
   name: string;
   description: string;
   damage: number;

@@ -1,26 +1,27 @@
 <div class="zones-container">
   <h1>Zones de Mobaria</h1>
   <p class="zones-description">
-    Explore les différentes régions du monde, chacune avec ses propres défis, 
+    Explore les différentes régions du monde, chacune avec ses propres défis,
     monstres et trésors à découvrir.
   </p>
 
   <div class="zones-grid">
-    <div class="zone-card" *ngFor="let zone of zones" [routerLink]="['/wiki/world/zones', zone.id]">
+    <!-- Zone 1: Paysan -->
+    @for (zone of zones; track zone.id) {
+    <a class="zone-card" [routerLink]="['/wiki/world/zones', zone.id]">
       <div class="zone-image">
-        <img [src]="zone.imageUrl" [alt]="zone.name">
-        <div class="zone-level">Niveau {{ zone.level.min }} - {{ zone.level.max }}</div>
+        <img src="{{zone.imageUrl}}" alt="Zone image">
       </div>
       <div class="zone-content">
-        <h2>{{ zone.name }}</h2>
-        <p class="zone-biome">{{ zone.biome }}</p>
-        <p class="zone-description">{{ zone.description }}</p>
-        <div class="zone-features" *ngIf="zone.dungeon">
-          <span class="feature dungeon">
-            Donjon: {{ zone.dungeon.name }}
-          </span>
-        </div>
+        <h2>{{zone.name}}</h2>
+        <p class="zone-description">{{zone.description}}</p>
       </div>
-    </div>
+      
+      <div class="required-level" [ngClass]="{'hidden': zone.recommendedLevel === 0}">
+        <span>Niveau recommandé : {{zone.recommendedLevel}}</span>
+      </div>
+    </a>
+    }
+
   </div>
 </div>

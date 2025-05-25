@@ -1,0 +1,108 @@
+<div class="quests-container">
+  <div class="container">
+    
+    <div class="quests-header">
+      <h1>Quêtes de Mobaria</h1>
+      <p class="quests-intro">
+        Découvrez toutes les aventures qui vous attendent dans le monde de Mobaria. 
+        Des quêtes principales épiques aux événements limités, votre destin vous attend.
+      </p>
+    </div>
+    
+    <div class="quests-filters">
+      <h3>Filtres</h3>
+      <div class="filters-grid">
+        <div class="filter-group">
+          <label>Région</label>
+          <div class="filter-options">
+            <button 
+              class="filter-btn" 
+              [ngClass]="{'active': selectedRegion === null}"
+              (click)="setRegionFilter(null)"
+            >
+              Toutes
+            </button>
+            @for (region of regions; track region) {
+              <button 
+                class="filter-btn" 
+                [ngClass]="{'active': selectedRegion === region}"
+                (click)="setRegionFilter(region)"
+              >
+                {{region}}
+              </button>
+            }
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <label>Type de quête</label>
+          <div class="filter-options">
+            <button 
+              class="filter-btn" 
+              [ngClass]="{'active': selectedQuestType === null}"
+              (click)="setTypeFilter(null)"
+            >
+              Tous
+            </button>
+            @for (type of types; track type) {
+              <button 
+                class="filter-btn" 
+                [ngClass]="{'active': selectedQuestType === type}"
+                [class]="getQuestTypeClass(type)"
+                (click)="setTypeFilter(type)"
+              >
+                {{type}}
+              </button>
+            }
+          </div>
+        </div>
+        
+        <div class="filter-group">
+          <label>Niveau minimum: {{minLevel}}</label>
+          <input 
+            type="range" 
+            min="1" 
+            max="30" 
+            [value]="minLevel" 
+            (input)="setLevelFilter($event)" 
+            class="level-slider"
+          >
+        </div>
+        
+        <button class="clear-filters" (click)="clearFilters()">
+          Réinitialiser les filtres
+        </button>
+      </div>
+    </div>
+    
+    <div class="quests-grid">
+      @if (filteredQuests.length === 0) {
+        <div class="no-quests">
+          <p>Aucune quête ne correspond à vos critères de recherche.</p>
+        </div>
+      } @else {
+        @for (quest of filteredQuests; track quest.id) {
+          <div class="quest-card">
+            <div class="quest-header">
+              <span class="quest-level">Niv. {{quest.level}}</span>
+              <span class="quest-type" [ngClass]="getQuestTypeClass(quest.type)">{{quest.type}}</span>
+            </div>
+            <h3 class="quest-title">{{quest.title}}</h3>
+            <div class="quest-region">
+              <span>Région:</span> {{quest.region}}
+            </div>
+            <p class="quest-description">{{quest.description}}</p>
+            <div class="quest-rewards">
+              <h4>Récompenses:</h4>
+              <ul>
+                @for (reward of quest.rewards; track reward) {
+                  <li>{{reward}}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>

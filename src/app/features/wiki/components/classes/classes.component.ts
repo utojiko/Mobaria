@@ -56,6 +56,7 @@ export class ClassesComponent implements OnInit {
   }
   
   getSelectedClass() {
+    console.log('2Classe sélectionnée:', this.selectedClass, this.classes);
     return this.classes.find(c => c.id === this.selectedClass);
   }
   
