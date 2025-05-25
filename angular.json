@@ -35,13 +35,14 @@
             ],
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "outputPath": "dist/demo",
+            "outputPath": "dist/mobaria",
             "polyfills": [
               "zone.js"
             ],
             "scripts": [],
             "styles": [
-              "src/global_styles.css"
+              "src/global_styles.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "tsConfig": "tsconfig.app.json"
           }
@@ -50,10 +51,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "development": {
-              "buildTarget": "demo:build:development"
+              "buildTarget": "mobaria:build:development"
             },
             "production": {
-              "buildTarget": "demo:build:production"
+              "buildTarget": "mobaria:build:production"
             }
           },
           "defaultConfiguration": "development"

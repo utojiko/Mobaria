@@ -41,11 +41,6 @@ export class ClassesComponent implements OnInit {
         this.classes = data;
         this.loading = false;
         
-        if (data.length > 0 && !this.selectedClass) {
-          // Sélectionner automatiquement la première classe si aucune n'est sélectionnée
-          this.selectedClass = data[0].id;
-        }
-        
         console.log('Classes chargées avec succès:', data);
       },
       error: err => {

@@ -10,52 +10,241 @@
     <h2>Qu'est-ce qu'il y a sur le serveur ?</h2>
     <div>
       <p>
-        Mobaria est un serveur Minecraft MMO RPG unique, offrant une expérience immersive avec <strong>des classes, des quêtes épiques et des donjons à explorer</strong>.
+        Mobaria est un serveur Minecraft MMO RPG unique, offrant une expérience immersive avec <strong>des classes, des
+          quêtes épiques et des donjons à explorer</strong>.
       </p>
       <p>
-        Un <strong>texture pack</strong> inclut dans le serveur vous plongera dans l'univers de Mobaria, avec <strong>des monstres, des armes et des armures personnalisés</strong>.
+        Un <strong>texture pack</strong> inclut dans le serveur vous plongera dans l'univers de Mobaria, avec
+        <strong>des monstres, des armes et des armures personnalisés</strong>.
         Découvrez un monde riche en aventures, où chaque choix compte et où vous pouvez forger votre propre héritage.
       </p>
       <p>
-        Le serveur en version 1.21.3 et + est disponible à l'adresse <a href="minecraft://?addExternalServer=Mobaria|play.mobaria.com" target="_blank">play.mobaria.com</a>.
+        Le serveur en version 1.21.3 et + est disponible à l'adresse <a
+          href="minecraft://?addExternalServer=Mobaria|play.mobaria.com" target="_blank">play.mobaria.com</a>.
       </p>
       <p>
-        Pour commencer, explorez les différentes sections du wiki pour en apprendre davantage sur les classes, les mécaniques de jeu, les monstres et bien plus encore.
+        Pour commencer, explorez les différentes sections du wiki pour en apprendre davantage sur les classes, les
+        mécaniques de jeu, les monstres et bien plus encore.
       </p>
     </div>
   </div>
-  
-  <div class="wiki-sections">
-    <div class="section-card" *ngFor="let section of wikiSections" [routerLink]="section.route" [style.--section-color]="section.color">
-      <div class="section-icon">{{ section.icon }}</div>
-      <h2>{{ section.title }}</h2>
-      <p>{{ section.description }}</p>
+
+  <div class="content-grid">
+    <div class="main-content">
+      <section class="guide-section">
+        <h2>1. Créer ton personnage</h2>
+        <div class="guide-content">
+          <img src="https://images.pexels.com/photos/7887800/pexels-photo-7887800.jpeg" alt="Character Creation">
+          <div class="text-content">
+            <p>La première étape une fois le serveur rejoint est de choisir ta classe. Chaque classe possède des sorts
+              et des habilités uniques.</p>
+            <ul>
+              <li><strong>Guerrier</strong> : Le maître du corps à corps</li>
+              <li><strong>Mage</strong> : Manie une puissante magie élémentaire</li>
+              <li><strong>Archer</strong> : Expert dans les combats à longue distance</li>
+              <li><strong>Voleur</strong> : Le plus fourbe de tous</li>
+              <li><strong>Soigneur</strong> : Indispensable dans une équipe</li>
+              <li><strong>Tank</strong> : Un irrésistible personnage.</li>
+            </ul>
+            <a routerLink="/wiki/classes" class="btn">Voir les détails des classes</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>2. Les contrôles spécifiques au serveur</h2>
+        <div class="controls-grid">
+          <div class="control-card">
+            <h3>Mouvements</h3>
+            <ul>
+              <li><kbd>Z</kbd> Avancer</li>
+              <li><kbd>Q</kbd> Aller à gauche</li>
+              <li><kbd>S</kbd> Reculer</li>
+              <li><kbd>D</kbd> Aller à droite</li>
+              <li><kbd>Espace</kbd> Sauter</li>
+              <li><kbd>Shift</kbd> Sprinter</li>
+            </ul>
+          </div>
+
+          <div class="control-card">
+            <h3>Combat</h3>
+            <ul>
+              <li><kbd>Clic gauche</kbd> Attaque</li>
+              <li><kbd>Clic droit</kbd> Poser / Viser</li>
+              <li><kbd>1-9</kbd> Raccourcis des habilités</li>
+              <li><kbd>R</kbd> Recharger</li>
+              <li><kbd>F</kbd> Interagir</li>
+              <li><kbd>A</kbd> Capacité ultime</li>
+            </ul>
+          </div>
+
+          <div class="control-card">
+            <h3>Interface</h3>
+            <ul>
+              <li><kbd>I</kbd> Inventaire</li>
+              <li><kbd>M</kbd> Map</li>
+              <li><kbd>P</kbd> Vue du personnage</li>
+              <li><kbd>L</kbd> Liste des quêtes</li>
+              <li><kbd>C</kbd> Interface de craft</li>
+              <li><kbd>B</kbd> Livre des sorts</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>3. Les premières étapes</h2>
+        <div class="guide-content">
+          <img src="https://images.pexels.com/photos/6627291/pexels-photo-6627291.jpeg" alt="Starting Area">
+          <div class="text-content">
+            <p>Quand tu entreras pour la première fois dans le monde, tu arriveras dans la première zone. Chaque zone a
+              une thématique, tu les découvriras au sein de ton aventure. Pour bien débuter, nous te conseillons de
+              réaliser les actions suivantes :</p>
+            <ol>
+              <li>Parler à Jérome, le villageois sur la droite du spawn pour recevoir la première quête.</li>
+              <li>Complétez l'entrainement.</li>
+              <li>Apprenes-en plus sur les habilités de ta classe.</li>
+              <li>Obtient tes premières pièces d'équipement en réalisant la quête</li>
+              <li>Commence à explorer la zone !</li>
+            </ol>
+            <div class="tip-box">
+              <span class="material-icons" style="color: #ffa000; vertical-align: middle; ">warning</span>
+              <div>N'oublie pas de lire les quêtes ! Elles contiennent souvent des informations importantes au niveau du
+                lore.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>4. Expérience & Progression</h2>
+        <div class="progression-grid">
+          <div class="progression-card">
+            <i class="fas fa-star"></i>
+            <h3>Expérience</h3>
+            <p>Gagner de l'XP de différentes manière :</p>
+            <ul>
+              <li>En complétant des quêtes</li>
+              <li>En battant des monstres</li>
+              <li>En explorant de nouvelles zones</li>
+              <li>En craftant des items</li>
+            </ul>
+          </div>
+
+          <div class="progression-card">
+            <i class="fas fa-book"></i>
+            <h3>Habilités</h3>
+            <p>Améliore ton personnage en:</p>
+            <ul>
+              <li>Compétences de combat</li>
+              <li>Compétences d'artisanat</li>
+              <li>Professions de récolte</li>
+              <li>Talents spéciaux</li>
+            </ul>
+          </div>
+
+          <div class="progression-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Equipement</h3>
+            <p>Améliore ton équipement en :</p>
+            <ul>
+              <li>Accomplissant des quêtes</li>
+              <li>Drop sur les monstres</li>
+              <li>Craftant</li>
+              <li>Échangeant</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide-section">
+        <h2>5. Fonctionnalités sociales</h2>
+        <div class="social-features">
+          <div class="feature-card">
+            <h3>Les guildes</h3>
+            <p>Rejoint une guilde pour :</p>
+            <ul>
+              <li>Faites équipe pour les donjons</li>
+              <li>Accédez aux avantages de la guilde</li>
+              <li>Participez aux événements de la guilde</li>
+              <li>Faites-vous de nouveaux amis</li>
+            </ul>
+            <div class="show-command">/guild</div>
+          </div>
+
+          <div class="feature-card">
+            <h3>Les échanges</h3>
+            <p>Échangez et vendez des items avec les autres joueurs :</p>
+            <ul>
+              <li>Utiliser l'hôtel des ventes</li>
+              <li>Échange direct entre joueurs</li>
+              <li>Créer une boutique</li>
+              <li>Change de devises</li>
+            </ul>
+            <div class="show-command">/trade</div>
+          </div>
+
+          <div class="feature-card">
+            <h3>Canaux textuels</h3>
+            <p>Les moyens de communications :</p>
+            <ul>
+              <li>Chat mondial</li>
+              <li>Chat local</li>
+              <li>Chat de guilde</li>
+              <li>Messages privés</li>
+            </ul>
+            <div class="show-command">/chat</div>
+          </div>
+        </div>
+      </section>
     </div>
-  </div>
-  
-  <div class="wiki-recent">
-    <h2>Articles récents</h2>
-    <div class="recent-articles">
-      <a class="article-link" routerLink="/wiki/world/quests">
-        <span class="article-title">Guide des quêtes pour débutants</span>
-        <span class="article-category">Monde</span>
-      </a>
-      <a class="article-link" routerLink="/wiki/classes/warrior">
-        <span class="article-title">Maîtriser la classe Guerrier</span>
-        <span class="article-category">Classes</span>
-      </a>
-      <a class="article-link" routerLink="/wiki/mechanics/dungeons">
-        <span class="article-title">Stratégies pour le Donjon des Abysses</span>
-        <span class="article-category">Mécaniques</span>
-      </a>
-    </div>
-  </div>
-  
-  <div class="wiki-search-box">
-    <h2>Rechercher dans le wiki</h2>
-    <div class="search-container">
-      <input type="text" placeholder="Que recherchez-vous ?" />
-      <button>Rechercher</button>
-    </div>
+
+    <aside class="sidebar">
+      <section class="quick-links">
+        <h2>Liens rapides</h2>
+        <ul>
+          <li><a routerLink="/wiki/classes">Class Guides</a></li>
+          <li><a routerLink="/wiki/quests">Quest Database</a></li>
+          <li><a routerLink="/wiki/monsters">Monster Guide</a></li>
+          <li><a routerLink="/wiki/spells">Spell Directory</a></li>
+        </ul>
+      </section>
+
+      <section class="server-info">
+        <h2>Informations du serveur</h2>
+        <div class="info-card">
+          <div class="info-item">
+            <span>Adresse du serveur</span>
+            <code>play.mobaria.com</code>
+          </div>
+          <div class="info-item">
+            <span>Version du serveur</span>
+            <code>1.21.3 et +</code>
+          </div>
+        </div>
+      </section>
+
+      <section class="help-resources">
+        <h2>Need Help?</h2>
+        <div class="resource-links">
+          <a href="https://discord.gg/8TE2T5cpRn" target="_blank" class="resource-link">
+            <i class="fab fa-discord"></i>
+            Join our Discord
+          </a>
+          <a href="#" class="resource-link">
+            <i class="fas fa-book"></i>
+            Full Documentation
+          </a>
+          <a href="#" class="resource-link">
+            <i class="fas fa-question-circle"></i>
+            FAQ
+          </a>
+          <a href="#" class="resource-link">
+            <i class="fas fa-bug"></i>
+            Report a Bug
+          </a>
+        </div>
+      </section>
+    </aside>
   </div>
 </div>

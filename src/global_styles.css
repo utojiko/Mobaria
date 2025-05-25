@@ -30,6 +30,7 @@
   
   /* Couleurs additionnelles */
   --color-light-gray: #8e9297;
+  --color-light-light-gray: #D1D1D1;
   --color-white: #ffffff;
   --color-shadow: rgba(0, 0, 0, 0.5);
   
@@ -123,13 +124,13 @@ p {
 }
 
 a {
-  color: var(--color-light-blue);
+  color: #d6d6d6;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-gold);
+  color: var(--color-light-gold);
 }
 
 button {
