@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Ensure clean build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "Auto-generated commit to ensure clean build"
+
       - name: Build Angular app
         run: npm run build -- --output-path=dist --base-href=/
 
