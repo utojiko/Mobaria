@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "name": "Zone Paysan",
+        "name": "Ferme infestée",
         "description": "Une région paisible où les champs s'étendent à perte de vue.",
         "imageUrl": "assets/images/zones/zone1.png",
         "recommendedLevel": 1,
         "mobs_outside": [1, 2],
-        "dungeons": [1],
+        "dungeons": [4],
         "unlock": "Finir la quête \"Une vie de paysan\"",
         "difficulty": "Facile"
     },
     {
         "id": 2,
-        "name": "Zone Forêt",
+        "name": "Forêt primaire",
         "description": "Un endroit mystérieux rempli d'arbres anciens et de créatures sauvages.",
         "imageUrl": "assets/images/zones/zone2.png",
         "recommendedLevel": 10,
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "name": "Zone Plage",
+        "name": "Dome submergé",
         "description": "Une plage ensoleillée avec des vagues douces et des trésors cachés.",
         "imageUrl": "assets/images/zones/zone3.png",
         "recommendedLevel": 20,
@@ -31,5 +31,16 @@
         "dungeons": [2,3],
         "unlock": "Finir la quête \"Une vie de grain de sable\"",
         "difficulty": "Moyenne"
+    },
+    {
+        "id": 4,
+        "name": "Royaume de glace",
+        "description": "Un royaume gelé où la neige ne fond jamais et les créatures de glace règnent.",
+        "imageUrl": "assets/images/zones/zone3.png",
+        "recommendedLevel": 30,
+        "mobs_outside": [1, 2, 3],
+        "dungeons": [2,3],
+        "unlock": "Finir la quête \"Une vie de flocon\"",
+        "difficulty": "Difficile"
     }
 ]

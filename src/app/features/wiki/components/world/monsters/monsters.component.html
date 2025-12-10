@@ -1,0 +1,27 @@
+<div class="monsters-container">
+    <h1>Monstres de Mobaria</h1>
+    <p class="monsters-description">
+        Découvre les créatures qui peuplent notre monde, leurs caractéristiques et les trésors qu'elles peuvent laisser
+        tomber.
+    </p>
+
+    <div class="monster-filters">
+        <div class="search-box">
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher un monstre..."
+                (input)="filterMonsters()">
+        </div>
+    </div>
+
+    <div class="monsters-grid">
+        <div class="monster-card" *ngFor="let monster of filteredMonsters"
+            [routerLink]="['/wiki/world/monsters', monster.id]">
+            <div class="monster-image">
+                <img [src]="monster.imageUrl" [alt]="monster.name">
+                <div class="monster-level">Niveau {{ monster.level }}</div>
+            </div>
+            <div class="monster-content">
+                <h2>{{ monster.name }}</h2>
+            </div>
+        </div>
+    </div>
+</div>

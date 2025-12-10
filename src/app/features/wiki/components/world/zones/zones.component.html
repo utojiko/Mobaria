@@ -9,6 +9,9 @@
     <!-- Zone 1: Paysan -->
     @for (zone of zones; track zone.id) {
     <a class="zone-card" [routerLink]="['/wiki/world/zones', zone.id]">
+      <div class="zone-difficulty" [ngClass]="zone.difficulty">
+        <span>{{zone.difficulty}}</span>
+      </div>
       <div class="zone-image">
         <img src="{{zone.imageUrl}}" alt="Zone image">
       </div>
@@ -17,7 +20,7 @@
         <p class="zone-description">{{zone.description}}</p>
       </div>
       
-      <div class="required-level" [ngClass]="{'hidden': zone.recommendedLevel === 0}">
+      <div class="required-level" [ngStyle]="{'visibility': zone.recommendedLevel <= 1 ? 'hidden' : 'visible'}">
         <span>Niveau recommandé : {{zone.recommendedLevel}}</span>
       </div>
     </a>

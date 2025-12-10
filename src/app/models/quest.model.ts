@@ -1,5 +1,5 @@
 export interface Quest {
-  id: string;
+  id: number;
   name: string;
   description: string;
   minLevel: number;
@@ -22,6 +22,6 @@ export interface QuestStep {
 export interface QuestReward {
   type: 'xp' | 'item' | 'currency' | 'reputation';
   value: number;
-  itemId?: string;
+  item?: string;
   itemName?: string;
 }

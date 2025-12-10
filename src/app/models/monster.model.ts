@@ -1,18 +1,17 @@
+import { Item } from "./item.model";
+
 export interface Monster {
-  id: string;
+  id: number;
   name: string;
   description: string;
   level: number;
-  health: number;
-  attack: number;
-  defense: number;
-  family: string;
-  location: string[];
-  strengths: string[];
-  weaknesses: string[];
   attacks: MonsterAttack[];
   drops: MonsterDrop[];
+  health: number;
+  defense: number;
   imageUrl?: string;
+  location?: string[];
+  weakness?: string[];
 }
 
 export interface MonsterAttack {
@@ -24,9 +23,8 @@ export interface MonsterAttack {
 }
 
 export interface MonsterDrop {
-  itemId: string;
+  item: Item;
   itemName: string;
   dropRate: number; // percentage
-  minQuantity: number;
-  maxQuantity: number;
+  quantity?: number;
 }

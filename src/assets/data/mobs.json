@@ -2,47 +2,179 @@
   {
     "id": 1,
     "name": "Loup Sauvage",
-    "zoneId": 2,
     "description": "Un prédateur rapide et agile qui chasse en meute.",
-    "strength": 3,
-    "weakness": "Feu"
+    "level": 1,
+    "health": 100,
+    "defense": 5,
+    "attacks": [
+      {
+        "name": "Morsure",
+        "damage": 10,
+        "cooldown": 5,
+        "type": "Aquatique",
+        "description": "Inflige des dégâts et a une chance de saigner la cible."
+      },
+      {
+        "name": "Griffure",
+        "damage": 8,
+        "cooldown": 3,
+        "type": "Aquatique",
+        "description": "Inflige des dégâts et a une chance de saigner la cible."
+      }
+    ],
+    "imageUrl": "assets/images/mobs/images.jpg",
+    "drops": [
+      {
+        "item": 1,
+        "quantity": 1,
+        "dropRate": 0.5
+      },
+      {
+        "item": 2,
+        "quantity": 2,
+        "dropRate": 0.9
+      }
+    ],
+    "loot": [
+      {
+        "item": 1,
+        "quantity": 1
+      },
+      {
+        "item": 2,
+        "quantity": 2
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Zombie Paysan",
-    "zoneId": 1,
     "description": "Un ancien fermier revenu à la vie.",
-    "strength": 2,
-    "weakness": "Lumière"
+    "level": 2,
+    "health": 120,
+    "defense": 8,
+    "attacks": [
+      {
+        "name": "Coup de Pelle",
+        "damage": 12,
+        "cooldown": 6,
+        "type": "Physique",
+        "description": "Inflige des dégâts modérés."
+      }
+    ],
+    "imageUrl": "assets/images/mobs/images.jpg",
+    "drops": [
+      {
+        "item": 3,
+        "quantity": 1,
+        "dropRate": 0.7
+      }
+    ],
+    "loot": [
+      {
+        "item": 3,
+        "quantity": 1
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Crabe Géant",
-    "zoneId": 3,
     "description": "Un crustacé massif qui défend son territoire.",
-    "strength": 4,
-    "weakness": "Électricité"
+    "level": 3,
+    "health": 150,
+    "defense": 10,
+    "attacks": [
+      {
+        "name": "Pince Écrasante",
+        "damage": 15,
+        "cooldown": 7,
+        "type": "Physique",
+        "description": "Inflige des dégâts élevés."
+      }
+    ],
+    "imageUrl": "assets/images/mobs/images.jpg",
+    "drops": [
+      {
+        "item": 4,
+        "quantity": 1,
+        "dropRate": 0.6
+      }
+    ],
+    "loot": [
+      {
+        "item": 4,
+        "quantity": 1
+      }
+    ]
   },
   {
-    "id": 1001,
-    "name": "Premier boss",
-    "zoneId": 3,
-    "description": "Un crustacé massif qui défend son territoire.",
-    "strength": 4,
-    "weakness": "Électricité"
+    "id": 4,
+    "name": "Araignée Venimeuse",
+    "description": "Une créature sournoise qui attaque avec son venin.",
+    "level": 4,
+    "health": 80,
+    "defense": 4,
+    "attacks": [
+      {
+        "name": "Morsure Venimeuse",
+        "damage": 10,
+        "cooldown": 5,
+        "type": "Poison",
+        "description": "Inflige des dégâts et empoisonne la cible."
+      },
+      {
+        "name": "Filet Collant",
+        "damage": 5,
+        "cooldown": 4,
+        "type": "Contrôle",
+        "description": "Enchevêtre la cible, réduisant sa mobilité."
+      }
+    ],
+    "imageUrl": "assets/images/mobs/images.jpg",
+    "drops": [
+      {
+        "item": 5,
+        "quantity": 1,
+        "dropRate": 0.4
+      }
+    ],
+    "loot": [
+      {
+        "item": 5,
+        "quantity": 1
+      }
+    ]
   },
   {
-    "id": 1002,
-    "name": "Deuxième boss",
-    "description": "Un crustacé massif qui défend son territoire.",
-    "strength": 8,
-    "weakness": "Eau"
-  },
-  {
-    "id": 1003,
-    "name": "Troisième boss",
-    "description": "Un crustacé massif qui défend son territoire.",
-    "strength": 12,
-    "weakness": "Feu"
+    "id": 5,
+    "name": "Golem de Pierre",
+    "description": "Un gardien imposant fait de roche solide.",
+    "level": 5,
+    "health": 300,
+    "defense": 20,
+    "attacks": [
+      {
+        "name": "Coup de Poing",
+        "damage": 20,
+        "cooldown": 8,
+        "type": "Physique",
+        "description": "Inflige des dégâts massifs."
+      }
+    ],
+    "imageUrl": "assets/images/mobs/images.jpg",
+    "drops": [
+      {
+        "item": 6,
+        "quantity": 1,
+        "dropRate": 0.3
+      }
+    ],
+    "loot": [
+      {
+        "item": 6,
+        "quantity": 1
+      }
+    ]
   }
 ]

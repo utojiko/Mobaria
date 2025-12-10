@@ -24,6 +24,7 @@
 }
 
 .zone-card {
+  position: relative;
   background-color: var(--color-slate);
   border-radius: 8px;
   overflow: hidden;
@@ -37,6 +38,35 @@
 
     .zone-image img {
       transform: scale(1.05);
+    }
+  }
+
+  .zone-difficulty {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 10;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--color-white);
+    
+    &.Facile {
+      background-color: rgba(0, 85, 0, 0.7);
+      color: var(--color-white);
+    }
+
+    &.Moyenne {
+      background-color: rgba(85, 85, 0, 0.7);
+      color: var(--color-white);
+    }
+
+    &.Difficile {
+      background-color: rgba(85, 0, 0, 0.7);
+      color: var(--color-white);
     }
   }
 

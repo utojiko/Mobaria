@@ -1,10 +1,13 @@
+import { Dungeon } from './dungeon.model';
+import { Monster } from './monster.model';
+
 export interface ZoneDetails {
   id: number;
   name: string;
   description: string;
   imageUrl?: string;
   recommendedLevel: number
-  mobs_outside: Mob[];
+  mobs_outside: Monster[];
   dungeons?: Dungeon[];
   unlock: string;
   difficulty?: 'Facile' | 'Moyenne' | 'Difficile' | 'Très difficile';
@@ -21,17 +24,6 @@ export interface Zone {
   unlock: string;
   difficulty?: 'Facile' | 'Moyenne' | 'Difficile' | 'Très difficile';
   // items: ZoneItem[];
-}
-
-export interface Dungeon {
-  id: number;
-  name: string;
-  description: string;
-  requiredLevel: number;
-  recommendedLevel: number;
-  mobs: Mob[];
-  boss?: Mob;
-  imageUrl?: string;
 }
 
 export interface Mob {

@@ -26,5 +26,14 @@
     "mobs": [1, 2, 3],
     "requiredLevel": 25,
     "imageUrl": "assets/images/dungeon1.png"
+  },
+  {
+    "id": 4,
+    "name": "Forteresse Gelée",
+    "description": "Une forteresse glacée où résident des créatures de glace redoutables.",
+    "boss": 1004,
+    "mobs": [1, 2, 3],
+    "requiredLevel": 35,
+    "imageUrl": "assets/images/dungeon1.png"
   }
 ]

@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export type CategoryType = 'keys' | 'ranks' | 'cosmetics' | 'pannier';
 
 export interface StoreItem {
-  id: string;
+  id: number;
   name: string;
   description: string;
   price: number;
@@ -25,7 +25,7 @@ export class StoreService {
   // Mock store data
   private storeItems: StoreItem[] = [
     {
-      id: 'common-key',
+      id: 1,
       name: 'Clé Commune',
       description: 'Ouvre un coffre commun contenant des objets basiques pour votre aventure.',
       price: 2.50,
@@ -33,7 +33,7 @@ export class StoreService {
       category: 'keys'
     },
     {
-      id: 'rare-key',
+      id: 2,
       name: 'Clé Rare',
       description: 'Ouvre un coffre rare avec une chance d\'obtenir des objets de qualité supérieure.',
       price: 5.00,
@@ -41,7 +41,7 @@ export class StoreService {
       category: 'keys'
     },
     {
-      id: 'legendary-key',
+      id: 3,
       name: 'Clé Légendaire',
       description: 'Ouvre un coffre légendaire contenant des objets uniques et puissants.',
       price: 10.00,
@@ -49,7 +49,7 @@ export class StoreService {
       category: 'keys'
     },
     {
-      id: 'vip-rank',
+      id: 4,
       name: 'Grade VIP',
       description: 'Accès à des commandes exclusives, slots prioritaires et tag VIP.',
       price: 15.00,
@@ -57,7 +57,7 @@ export class StoreService {
       category: 'ranks'
     },
     {
-      id: 'elite-rank',
+      id: 5,
       name: 'Grade Élite',
       description: 'Tous les avantages VIP plus des kits exclusifs et des effets de particules.',
       price: 25.00,
@@ -65,7 +65,7 @@ export class StoreService {
       category: 'ranks'
     },
     {
-      id: 'legend-rank',
+      id: 6,
       name: 'Grade Légende',
       description: 'Notre grade premium avec tous les avantages et des objets exclusifs.',
       price: 40.00,
@@ -73,7 +73,7 @@ export class StoreService {
       category: 'ranks'
     },
     {
-      id: 'pet-dragon',
+      id: 7,
       name: 'Familier Dragon',
       description: 'Un petit dragon qui vous accompagne dans vos aventures.',
       price: 8.00,
@@ -81,7 +81,7 @@ export class StoreService {
       category: 'cosmetics'
     },
     {
-      id: 'aura-fire',
+      id: 8,
       name: 'Aura de Feu',
       description: 'Effet visuel de particules de feu autour de votre personnage.',
       price: 6.00,
@@ -106,11 +106,11 @@ export class StoreService {
     return this.storeItems.filter(item => item.category === category);
   }
 
-  getItemById(id: string): StoreItem | undefined {
+  getItemById(id: number): StoreItem | undefined {
     return this.storeItems.find(item => item.id === id);
   }
 
-  addToCart(itemId: string, quantity: number = 1): void {
+  addToCart(itemId: number, quantity: number = 1): void {
     const item = this.getItemById(itemId);
 
     if (!item) {
@@ -130,14 +130,14 @@ export class StoreService {
     this.saveCart();
   }
 
-  removeFromCart(itemId: string): void {
+  removeFromCart(itemId: number): void {
     const currentCart = this.cartItemsSubject.value;
     const updatedCart = currentCart.filter(cartItem => cartItem.item.id !== itemId);
     this.cartItemsSubject.next(updatedCart);
     this.saveCart();
   }
 
-  updateQuantity(itemId: string, quantity: number): void {
+  updateQuantity(itemId: number, quantity: number): void {
     if (quantity <= 0) {
       this.removeFromCart(itemId);
       return;

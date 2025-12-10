@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "finalItem": 1,
+        "recipes": [
+            {
+                "item": 2,
+                "quantity": 10
+            },
+            {
+                "item": 2,
+                "quantity": 10
+            },
+            {
+                "item": 2,
+                "quantity": 10
+            }
+        ],
+        "craftingTime": 10
+    },
+    {
+        "id": 2,
+        "finalItem": 2,
+        "recipes": [
+            {
+                "item": 3,
+                "quantity": 5
+            },
+            {
+                "item": 4,
+                "quantity": 8
+            }
+        ],
+        "craftingTime": 15
+    },
+    {
+        "id": 3,
+        "finalItem": 3,
+        "recipes": [
+            {
+                "item": 5,
+                "quantity": 12
+            },
+            {
+                "item": 6,
+                "quantity": 7
+            }
+        ],
+        "craftingTime": 20
+    },
+    {
+        "id": 4,
+        "finalItem": 4,
+        "recipes": [
+            {
+                "item": 7,
+                "quantity": 10
+            },
+            {
+                "item": 8,
+                "quantity": 15
+            }
+        ],
+        "craftingTime": 25
+    },
+    {
+        "id": 5,
+        "finalItem": 5,
+        "recipes": [
+            {
+                "item": 9,
+                "quantity": 20
+            },
+            {
+                "item": 10,
+                "quantity": 10
+            }
+        ],
+        "craftingTime": 30
+    }
+]

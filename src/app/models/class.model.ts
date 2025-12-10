@@ -1,6 +1,6 @@
 
 export interface GameClass {
-  id: string;
+  id: number;
   name: string;
   description: string;
   color: string;
@@ -34,6 +34,6 @@ export interface ClassAttack {
 export interface EquipmentRecommendation {
   slot: string;
   itemName: string;
-  itemId: string;
+  item: string;
   reason: string;
 }

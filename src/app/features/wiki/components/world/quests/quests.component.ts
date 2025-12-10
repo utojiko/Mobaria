@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 interface Quest {
-  id: string;
+  id: number;
   title: string;
   level: number;
   description: string;
@@ -15,7 +14,7 @@ interface Quest {
 @Component({
   selector: 'app-quests',
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [NgClass],
   templateUrl: './quests.component.html',
   styleUrl: './quests.component.scss'
 })
@@ -26,7 +25,7 @@ export class QuestsComponent {
 
   quests: Quest[] = [
     {
-      id: 'q1',
+      id: 1,
       title: 'L\'Épée du Destin',
       level: 5,
       description: 'Une ancienne prophétie parle d\'une épée légendaire capable de sceller les ténèbres. Votre quête commence dans le village de Rivebois, où vous devrez retrouver le forgeron qui connaît l\'emplacement des fragments de cette arme mystique.',
@@ -35,7 +34,7 @@ export class QuestsComponent {
       type: 'Principale'
     },
     {
-      id: 'q2',
+      id: 2,
       title: 'La Forêt Maudite',
       level: 10,
       description: 'Les bois autrefois paisibles de la Sylve Obscure sont maintenant infestés de créatures corrompues. Les villageois de Taillebois vous supplient de découvrir la source de cette corruption et d\'y mettre fin.',
@@ -44,7 +43,7 @@ export class QuestsComponent {
       type: 'Principale'
     },
     {
-      id: 'q3',
+      id: 3,
       title: 'Les Mines Abandonnées',
       level: 8,
       description: 'D\'étranges bruits proviennent des anciennes mines de Rochefer. Le chef du village vous engage pour explorer les tunnels et découvrir ce qui terrorise les mineurs.',
@@ -53,7 +52,7 @@ export class QuestsComponent {
       type: 'Secondaire'
     },
     {
-      id: 'q4',
+      id: 4,
       title: 'Le Trésor Englouti',
       level: 15,
       description: 'Une carte au trésor vous mène vers une cité engloutie au large des côtes des Îles du Crépuscule. Des richesses inestimables vous attendent, mais aussi d\'anciens gardiens qui protègent les lieux.',
@@ -62,7 +61,7 @@ export class QuestsComponent {
       type: 'Secondaire'
     },
     {
-      id: 'q5',
+      id: 5,
       title: 'La Nuit des Étoiles Filantes',
       level: 20,
       description: 'Un événement astronomique rare approche. Le sage de la tour d\'Astralus vous demande de récupérer des fragments de météorites qui vont s\'écraser dans différentes régions de Mobaria.',
@@ -71,7 +70,7 @@ export class QuestsComponent {
       type: 'Événement'
     },
     {
-      id: 'q6',
+      id: 6,
       title: 'Les Larmes du Dragon',
       level: 25,
       description: 'Le dernier dragon de Mobaria est mourant. Avant de disparaître, il souhaite que ses larmes cristallisées soient utilisées pour forger une arme qui protégera le monde contre un mal ancien sur le point de s\'éveiller.',
@@ -80,7 +79,7 @@ export class QuestsComponent {
       type: 'Principale'
     },
     {
-      id: 'q7',
+      id: 7,
       title: 'Le Marchand Disparu',
       level: 12,
       description: 'Un marchand ambulant bien connu a disparu sur la route commerciale entre Hautval et Port-Azur. Sa famille vous supplie de le retrouver et de le ramener sain et sauf.',
@@ -89,7 +88,7 @@ export class QuestsComponent {
       type: 'Secondaire'
     },
     {
-      id: 'q8',
+      id: 8,
       title: 'Festival des Récoltes',
       level: 5,
       description: 'Le Festival des Récoltes approche et le village de Champ-Doré a besoin d\'aide pour les préparatifs. Aidez les fermiers à préparer la fête et protégez les champs des créatures affamées.',

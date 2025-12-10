@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { WikiRefreshCacheComponent } from './wiki-refresh-cache.component';
 
 interface WikiSection {
   title: string;
@@ -14,7 +13,7 @@ interface WikiSection {
 @Component({
   selector: 'app-wiki-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, WikiRefreshCacheComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './wiki-home.component.html',
   styleUrl: './wiki-home.component.scss'
 })

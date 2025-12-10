@@ -28,6 +28,12 @@ export class WorldComponent {
       description: 'Explore les différentes régions et leurs secrets.',
       route: '/wiki/world/zones',
       icon: '🗺️'
+    },
+    {
+      title: 'Donjons',
+      description: 'Explore les profondeurs des donjons et leurs trésors cachés.',
+      route: '/wiki/world/dungeons',
+      icon: '🏰'
     }
   ];
 }

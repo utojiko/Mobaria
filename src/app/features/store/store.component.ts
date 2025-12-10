@@ -49,11 +49,11 @@ export class StoreComponent {
     return item.price;
   }
 
-  updateQuantity(itemId: string, quantity: number) {
+  updateQuantity(itemId: number, quantity: number) {
     this.storeService.updateQuantity(itemId, quantity);
   }
 
-  removeFromCart(itemId: string) {
+  removeFromCart(itemId: number) {
     this.storeService.removeFromCart(itemId);
   }
 
@@ -61,7 +61,7 @@ export class StoreComponent {
     return this.storeService.getTotalPrice();
   }
 
-  addToCart(itemId: string, quantity: number = 1) {
+  addToCart(itemId: number, quantity: number = 1) {
     this.storeService.addToCart(itemId, quantity);
   }
 
@@ -69,7 +69,7 @@ export class StoreComponent {
     return this.cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
   }
 
-  getItemQuantity(itemId: string): number {
+  getItemQuantity(itemId: number): number {
     const cartItem = this.cartItems.find(cartItem => cartItem.item.id === itemId);
     return cartItem ? cartItem.quantity : 0;
   }

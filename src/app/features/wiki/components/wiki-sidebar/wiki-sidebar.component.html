@@ -11,6 +11,7 @@
     <a routerLink="/wiki" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-item home-link">
       <span class="nav-icon">📚</span>
       <span>Bienvenue sur Mobaria !</span>
+      <span class="nav-arrow"></span>
     </a>
     
     <div class="nav-section" *ngFor="let item of navItems">
@@ -21,6 +22,7 @@
          class="nav-item">
         <span class="nav-icon">{{ item.icon }}</span>
         <span>{{ item.label }}</span>
+        <span class="nav-arrow"></span>
       </a>
       
       <!-- Si l'item a des enfants (menu déroulant) -->
@@ -38,6 +40,7 @@
             class="nav-child-item"
           >
             {{ child.label }}
+            <span class="nav-arrow"></span>
           </a>
         </div>
       </ng-container>

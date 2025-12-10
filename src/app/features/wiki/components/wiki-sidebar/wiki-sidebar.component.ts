@@ -26,7 +26,8 @@ export class WikiSidebarComponent {
       children: [
         { label: 'Quêtes', route: '/wiki/world/quests' },
         { label: 'Monstres', route: '/wiki/world/monsters' },
-        { label: 'Zones', route: '/wiki/world/zones' }
+        { label: 'Zones', route: '/wiki/world/zones' },
+        { label: 'Donjons', route: '/wiki/world/dungeons' }
       ]
     },
     {

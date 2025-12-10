@@ -22,8 +22,5 @@ export class ZonesComponent implements OnInit {
       this.zones = zones;
     });
 
-    this.http.get<any[]>('assets/data/zones.json').subscribe(data => {
-      this.zones = data;
-    });
   }
 }
