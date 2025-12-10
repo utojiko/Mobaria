@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "level": 6,
+        "type": "equipement",
+        "imageUrl": "assets/images/mobs/images.jpg",
+        "name": "Épée "
+    },
+    {
+        "id": 2,
+        "level": 4,
+        "type": "consommable",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Potion de soin"
+    },
+    {
+        "id": 3,
+        "level": 8,
+        "type": "equipement",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Bouclier renforcé"
+    },
+    {
+        "id": 4,
+        "level": 10,
+        "type": "equipement",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Armure en acier"
+    },
+    {
+        "id": 5,
+        "level": 2,
+        "type": "consommable",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Ration de survie"
+    },
+    {
+        "id": 6,
+        "level": 12,
+        "type": "consommable",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Élixir de force"
+    },
+    {
+        "id": 7,
+        "level": 15,
+        "type": "equipement",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Arc long en bois"
+    },
+    {
+        "id": 8,
+        "level": 20,
+        "type": "consommable",
+        "imageUrl": "assets/images/items/images.jpg",
+        "name": "Potion de mana"
+    }
+]
